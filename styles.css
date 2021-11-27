@@ -1,0 +1,605 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+/* container that surrounds everything */
+
+.container{
+    margin: 0 8%;
+}
+
+/* bike header design */
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.banner{
+    background-image: url(pictures/bikeParts.jpg);
+    height: 60vh;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.719);
+}
+
+/* designs added to searchbar  within header*/
+
+.search input{
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.search input:focus{
+  outline: none;
+}
+
+.search i{
+    color: white;
+    background-color: black;
+    padding: 12px;
+    float: right;
+}
+
+/* designs added to icons within header */
+
+.icon i{
+    margin-left: 8px;
+    font-size: 24px;
+}
+
+.icon a{
+    text-decoration: none;
+    color: black;
+}
+
+/* styles added to cart that indicates how many items are in it */
+
+.icon span{
+font-size:10px;
+background: red;
+border-radius:50%;
+padding:3px 6px;
+left:-8px;
+top:-18px;
+color: white;
+position: relative;
+font-weight: bold;
+}
+
+/* navigation design */
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    /* margin:auto 40px; */
+    display: block;
+    padding:18px 48px;
+}
+
+nav ul li a:hover{
+    background-color: black;
+}
+
+/* banner content design */
+
+.banner{
+    position: relative;
+}
+
+/* content within banner */
+
+.content{
+    position: absolute;
+    left: 2em;
+    top: 8em;
+}
+
+.content h2{
+    color: white;
+    font-size:38px
+}
+
+.content h4{
+    color: white;
+    font-size:14px;
+    letter-spacing: 2px;
+    margin-top: 1em;
+    font-weight: 200;
+}
+
+/* button within content */
+
+.content .checkoutbtn{
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 1em;
+    width: 110px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.content .checkoutbtn:active{
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+/* products designs */
+
+#aroundProduct{
+    grid-template-columns: repeat(4,1fr);
+    display: grid;
+    height: 92vh;
+}
+
+#aroundProduct button{
+    margin: 10px auto;
+    display: block;
+    width: 90%;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: rgb(43, 42, 42);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+/* side menu beside products that are visible */
+
+.menu{
+    grid-column: 1/2;
+    background-color: rgb(245, 244, 244);
+}
+
+/* container that surrounds all elements of the products */
+.mainProducts{
+    grid-column: 2/5;
+}
+/* products within container */
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    grid-gap: 15px;
+    list-style-type: none;
+}
+
+/* product names within container */
+
+.products .name{
+    font-weight: bold;
+}
+
+/* product price within container */
+.products .price{
+    color: red;
+    font-weight: bold;
+}
+
+/* imges of products that are available */
+.products .image{
+    width: 100px;
+    height: 100px;
+}
+
+.products .eachItem:hover{
+    filter: opacity(75%);
+   
+}
+
+/* ratings of products */
+.products .star{
+    width: 120px;
+    height: 20px;
+}
+
+.eachItem{
+    border: 2px solid rgba(184, 182, 182, 0.137);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* module showing items added to cart */
+
+#addtocart{
+    z-index:1;
+    margin: 0 auto;
+    width: 100%; 
+    height: 100%; 
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: none;
+    overflow: auto;
+    background-color: rgba(56, 56, 56, 0.767);
+}
+
+
+
+/* content within modal */
+
+#addtocart .content{
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* top: 40px; */
+    display: grid;
+    grid-template-rows: 30px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+#addtocart #price{
+    color: red;
+    font-weight: bold;
+}
+
+#remove{
+    grid-column: 1/3;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.123);
+    height: 35px;
+    z-index: 2;
+}
+/* image for item that appears when modal popups */
+
+#myPictures{
+    grid-column: 1/2;
+    width: 10px;
+    height: 10px;
+}
+
+#myPictures img{
+    width: auto;
+    height: auto;
+}
+
+/* information section for modal */
+
+#info{
+    grid-column: 2/3;
+    margin: 1em 1em;
+    text-align: justify;
+    /* align-items: center; */
+    /* justify-items: center; */
+    /* display: grid; */
+}
+
+#addtocart .close{
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 1px 6px 1px 0;
+    cursor: pointer;
+    float: right;
+}
+
+#addtocart .close:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+#label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+/* design for button to add items to cart */
+ .content a{
+    text-decoration: none;
+}
+.cartButton{
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px;
+    width: 180px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+.cartButton:active{
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#rate{
+    height: 20px;
+    width: 30%;
+}
+
+.howMany{
+    width: 40px;
+  
+}
+
+/* my form designs */
+.surround{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(245, 244, 244);
+    padding: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(66, 65, 65);
+}
+
+.myForm h1, .contactInfo h1 {
+    font-weight: 100;
+}
+
+.myForm input{
+ width: 100%;
+ height: 40px;
+ margin-bottom: 20px;
+ border: none;
+ padding: 10px;
+}
+
+.myForm input::placeholder{
+    color: #aaa;
+}
+
+.myForm p{
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px;
+}
+
+textarea::placeholder{
+  color: #aaa;
+}
+
+.myForm input,textarea:focus{
+    outline: none;
+}
+
+.myForm button{
+    width: 120px;
+    padding: 10px 50px;
+    border:none;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #fff;
+    background-color: #00C5BE;;
+}
+
+.myForm button:hover{
+    cursor: pointer;
+} 
+
+.myForm button[disabled = "disabled"]{
+    opacity: 0.4;
+    cursor:not-allowed;
+}
+
+/* contact information */
+
+
+.contactInfo div img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.contactInfo .shop{
+    display: flex;
+    /* justify-content: center; */
+    margin: 0.7rem 0;
+    align-items: center;
+}
+
+
+.contactInfo .call{
+    display: flex;
+    /* justify-content: center; */
+    margin: 0.7rem 0;
+    align-items: center;
+}
+
+
+.contactInfo .whatsapp{
+    display: flex;
+    /* justify-content: center; */
+    margin: 0.7rem 0;
+    align-items: center;
+}
+
+
+.contactInfo .email{
+    display: flex;
+    /* justify-content: center; */
+    margin: 0.7rem 0;
+    /* align-items: center; */
+}
+
+.contactInfo span{
+    color: rgb(66, 65, 65);
+}
+
+
+/* checkout within cart items */
+
+.checkout{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(245, 244, 244); 
+    grid-gap: 20px;
+    padding-bottom: 20px;
+}
+
+.checkout .head{
+    text-align: center;
+    grid-column: 1/4;
+    display: grid;
+    justify-self: center;
+    grid-row:1/2;
+
+}
+
+.checkout .items{
+    grid-column: 1/3;
+    background-color: white;
+    margin-left:30px;
+    grid-row: 2/4;
+}
+
+.checkout .items #total{
+    font-size: 18px;
+}
+
+.checkout .checkoutpay{
+    grid-column: 3/4;
+    background-color: white;
+    margin-right: 30px;
+    grid-row:2/3 !important;
+}
+
+.checkout .makePayment{
+    grid-column: 3/4;
+    grid-row:3/4;
+    background-color: white;
+    margin-right:30px;
+}
+
+.checkout .top{
+    text-transform: uppercase;
+    margin:20px
+}
+
+.checkout hr{
+    height:1px;
+    background-color: rgba(236, 236, 236, 0.603);
+    margin: 0 20px;
+    border: 1px solid rgba(236, 236, 236, 0.603);
+}
+
+.checkout .grey{
+    margin:20px;
+    color: rgb(172, 170, 170);
+    font-weight: 600;
+}
+
+.checkoutpay{
+    padding-bottom: 20px;
+}
+
+.checkoutpay input{
+    margin-left: 20px;
+    width: 90%;
+    height: 40px;
+    border:2px solid rgba(206, 206, 206, 0.603);
+    padding: 10px;
+}
+
+.checkoutpay input::placeholder{
+    color: #aaa;
+}
+
+.checkoutpay input:focus{
+    outline: none;
+}
+
+
+
+.makePayment .cards{
+    width: 90%;
+    height: 40px;
+    background-color: rgb(223, 219, 219);
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cards i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.makePayment .buyNow{
+    width: 90%;
+    height: 40px;
+    background-color: green;
+    color: white;
+    margin: 20px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.remove{
+    color: red;
+}
+.items img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.checkout .ctnShopping{
+    height: 30px;
+    border:1px solid rgba(175, 174, 174, 0.603);
+    background-color: white;
+    border-radius: 4px;
+    margin:0px 20px 20px 20px;
+    font-weight: 600;
+    color: rgba(71, 71, 71, 0.938);
+    padding:0 12px 0 12px;
+}
+
+.checkout .ctnShopping:hover{
+    color: rgb(15, 15, 15);
+    cursor: pointer;
+}
+
+.checkout .total{
+    float: right;
+    margin-right:20px
+}
+
+.total input{
+    text-align: right;
+    border: none;
+}
+
+
+

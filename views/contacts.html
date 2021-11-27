@@ -1,0 +1,29 @@
+<div class="surround">
+    <div class="myForm">
+        <form action="" name="form">
+        <h1>Contact Us</h1> <br>
+            <p>Please fill out the form and we wil be in touch with you soon</p>
+        
+            <input type="text" placeholder="Name" ng-model="user.name " required >
+            
+            <input type="email" name="email" placeholder="Email" ng-model="user.email" required > <br>
+            
+            <textarea name="" id=""  placeholder="Message" cols="30" rows="10" ng-model="user.text" required></textarea> <br>
+            
+            <button type="submit" ng-disabled="form.$invalid">Send</button>
+        </form>
+    </div>
+
+    <div class="contactInfo">
+        <h1>Connect with us</h1> <br>
+
+         <p> For any query, contact us through email, phone, whatsapp or you can reach out our store.</p><br>
+       
+        <div class="shop"> <img src="pictures/icons/location.svg" alt=""><span>Shop no. 13, <br> Hawabi Building, Jail Rd, Dongri, Near Sandhurst Road Station, <br> Mumbai – 400009</span></div> <br>
+        
+        <div class="call"> <img src="pictures/icons/phone.svg" alt=""> <span>+91 786 8044 786</span></div> <br>
+        
+        <div class="whatsapp"><img src="pictures/icons/whatsapp.svg" alt=""><span>+91 786 8044 786</span></div> <br>
+        
+        <div class="email"><img src="pictures/icons/email.svg" alt=""><span>altamashskhan@gmail.com</span></div>
+</div>

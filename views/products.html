@@ -1,0 +1,25 @@
+
+<div ng-controller="myCtrl" id="aroundProduct">
+
+    <div class="menu">
+        <button ng-click="order='name'">Filter by Name</button> 
+        <button ng-click="order='price'">Filter by Price</button>
+
+    </div>
+
+    <div class="mainProducts" >
+        <ul class="products" >
+            <li ng-repeat="item in items | filter: search | orderBy : order" class="eachItem" ng-click="showInfo(this)">
+                <div>
+                    <img src="{{item.image}}" alt="" class="image">
+                </div>
+                <span class="name">{{item.name}}</span> <br>
+                <img src="{{item.rate}}" alt="" class="star"><br>
+                <span class="price">{{item.price | currency:'₹'}}</span>
+
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    

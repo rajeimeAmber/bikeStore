@@ -1,0 +1,53 @@
+<div class="checkout"  ng-controller="myCart">
+
+    <div class="head"><h1>Checkout</h1>
+    
+    </div>
+
+<div class="items">
+    <h4 class="top">Shopping Cart</h4>
+    <hr>
+    <ul style="list-style: none; margin: 20px;">
+        <li ng-repeat="item in items" style="margin-bottom: 10px; border-bottom: 3px solid rgba(236, 236, 236, 0.603); display: flex;align-items: center;" >
+            <i ng-click="remove($index)" class="fa fa-times" style="color: red; margin:10px;"></i>
+            <img src="{{item.myimage}}" alt="">{{item.myname}}
+
+            
+            <p style="margin-left: 60%;"> {{item.myprice | currency: '₹'}}</p>
+        </li>
+    </ul>
+
+  
+        <a href="#!products"><button class="ctnShopping"> < Continue Shopping</button></a>
+        <span class="total"><label for="total">Total:</label><input type="text" value="{{total | currency: '₹'}}" id="total"></span>
+     
+    
+</div>
+
+<div class="checkoutpay">
+    <h4 class="top">Your Information</h4>
+    <hr>
+    <h4 class="grey">Email</h4>
+    <input type="text" placeholder="john.doe@email.com">
+</div>
+
+<div class="makePayment">
+    <h4 class="top">Payment options</h4>
+    <hr>
+
+    <div class="cards">
+        <i class="fas fa-check-circle" style="color: green;"></i>
+        <i class="fab fa-paypal" style="color: rgb(6, 6, 143);"></i>
+        <i class="fab fa-cc-paypal" style="color: rgb(6, 6, 143);"></i>
+
+        <i class="fab fa-cc-visa" style="color:navy;"></i>
+        <i class="fab fa-cc-amex" style="color:blue;"></i>
+        <i class="fab fa-cc-mastercard" style="color:red;"></i>
+        <i class="fab fa-cc-discover" style="color:orange;"></i>
+    </div>
+
+    <button class="buyNow">Buy now</button>
+</div>
+
+</div>
+
